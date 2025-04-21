@@ -103,8 +103,8 @@ window.onload = function() {
     window.addEventListener('resize', function() {
         width = window.innerWidth;
         height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
     });
 
     window.addEventListener('mouseout', function() {
