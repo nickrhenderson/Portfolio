@@ -65,10 +65,10 @@ body {
 }
 
 .intro-img img {
-    height: clamp(25rem, 25vw, 60rem);
+    height: 20rem;
     width: auto;
     object-fit: cover;
-    margin: var(--spacing-xl);
+    margin: var(--spacing-md);
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     box-shadow: var(--shadow-default);
@@ -123,7 +123,7 @@ body {
 /* Technology Scroller */
 .scroller {
     position: relative;
-    width: 60%;
+    width: 90%;
     max-width: 800px;
     height: 100px;
     overflow: hidden;
@@ -486,15 +486,31 @@ body {
 @media screen and (max-width: 768px) {
     .grid-container {
         padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
     
-    .projects {
-        grid-template-columns: 1fr;
+    .intro-container {
+        padding: 1rem;
+        box-sizing: border-box;
     }
 
-    .project-card {
-        padding: 1rem;
-        margin: 0;
+    .intro-img {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-text,
+    .project-card,
+    .contact {
+        width: 100%;
+        box-sizing: border-box;
+        padding: var(--spacing-md);
+    }
+
+    .scroller {
+        width: 95%;
+        margin: 1rem auto;
     }
 }
 
