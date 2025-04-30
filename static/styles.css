@@ -357,17 +357,21 @@ canvas {
     align-items: center;
     justify-content: center;
     margin: 1rem 0;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .cycling-text {
-    box-sizing: border-box;
-    border-radius: 0.375rem;
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
+    padding: 0.5rem 1rem; /* Adjust as needed */
+    font-family: monospace; /* Helps avoid jumpy widths */
+    background-color: #f9fafb; /* Optional: gives a background to show padding */
+    border-radius: 0.25rem;    /* Optional: for a smoother look */
+    text-align: center;
+    display: inline-block;
 }
 
 .scramble-char {
+    font-family: monospace;
     display: inline-block;
     white-space: pre;
 }
