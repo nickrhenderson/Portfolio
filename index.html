@@ -3,120 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Nickrhenderson</title>
+    <title>Nick Henderson - Portfolio</title>
     <link rel="stylesheet" href="static/styles.css">
-    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
+    <div id="canvas-container"></div>
     
-    <canvas id="gridCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+    <div class="center">
+        <div class="profile-container">
+            <div class="profile-image">
+                <!-- Replace with your actual image path -->
+                <img src="static\img\Me.jpg" alt="Nick Henderson">
+            </div>
+            <div class="stacked-name">
+                <h1>NICHOLAS<br>HENDERSON</h1>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://linkedin.com/in/nickrhenderson" target="_blank" aria-label="LinkedIn Profile">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" 
+                     class="social-icon" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/nickrhenderson" target="_blank" aria-label="GitHub Profile">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
+                     class="social-icon" alt="GitHub">
+            </a>
+            <a href="path/to/your/resume.pdf" target="_blank" aria-label="Resume">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
 
-    <div class="intro-container" id="home">
-        <div class="intro-img">
-            <img src="static/images/Profile.JPEG" alt="Profile">
-            <div class="intro-text">
-                <h6>Hello, I'm</h6>
-                <h1>Nick Henderson</h1>
-                <div class="role-container">
-                    <span class="cycling-text"></span>
-                </div>
-                <div class="intro-links">
-                    <a href="https://www.linkedin.com/in/nickrhenderson/" target="_blank" rel="noopener noreferrer">
-                        <object class="link-icon" data="static/images/svg/linkedin.svg" type="image/svg+xml"></object>
-                    </a>
-                    <a href="https://github.com/nickrhenderson" target="_blank" rel="noopener noreferrer">
-                        <object class="link-icon" data="static/images/svg/github.svg" type="image/svg+xml"></object>
-                    </a>
-                </div>
+        <div class="edu-jobs">
+            <div class="toggle-container">
+                <button class="toggle-btn active" data-target="jobs">Experience</button>
+                <button class="toggle-btn" data-target="education">Education</button>
             </div>
-        </div>
-        
-        <div class="scroller">
-            <div class="scroller-inner" id="scrollerInner">
-                <object class="scroller-icon" data="static/images/svg/python.svg" type="image/svg+xml"></object>
-                <object class="scroller-icon" data="static/images/svg/javascript.svg" type="image/svg+xml"></object>
-                <object class="scroller-icon" data="static/images/svg/java.svg" type="image/svg+xml"></object>
-                <object class="scroller-icon" data="static/images/svg/html.svg" type="image/svg+xml"></object>
-                <object class="scroller-icon" data="static/images/svg/css.svg" type="image/svg+xml"></object>
-                <object class="scroller-icon" data="static/images/svg/mysql.svg" type="image/svg+xml"></object>
-                <object class="scroller-icon" data="static/images/svg/sqlite.svg" type="image/svg+xml"></object>
-            </div>
-        </div>
-    </div>
-
-    <div class="grid-container">
-        <!-- ABOUT ME -->
-        <div class="about" id="about">
-            <div class="about-text">
-                <h2>ABOUT ME</h2>
-                <p>I'm a graduate of Hopkinsville Community College, where I earned my A.A.S. in Software Engineering. I'm currently pursuing my B.S. in Software Engineering at Arizona State University, continuing to build on my skills and grow as a developer.
-                I'm passionate about creating intuitive and engaging user interfaces, writing clean and efficient code, and continually learning new technologies and best practices. I enjoy the process of turning ideas into polished, user-centered experiences, and I'm always looking for opportunities to improve both my technical and design skills.
-                Whether I'm working on a front-end layout or refining back-end logic, I bring a detail-oriented mindset and a genuine enthusiasm for crafting quality software. I'm driven by curiosity, creativity, and a constant desire to keep learning and evolving.</p>
-            </div>
-        </div>
-        
-        <!-- PROJECTS -->
-        <div class="projects" id="projects">
-            <div class="project-card"> <!-- Project Card Start -->
-                <div class="project-header">
-                    <div class="project-title-container">
+            
+            <div class="content-container">
+                <div id="jobs" class="content-section active">
+                    <!-- Work experience items -->
+                    <div class="job-item">
                         <h3>COG Discord Bot</h3>
-                        <div class="status-tags">
-                            <span class="repo-status private">🔒 Private</span>
-                            <span class="repo-status active">🟢 Active</span>
+                        <p class="company">Personal Project</p>
+                        <p class="period">Janurary 2023 - Present</p>
+                        <p class="description">Built a full-featured Discord bot with customizable tools and a progression system to boost community engagement. Integrated MySQL for persistent user stats and settings. Key features include auto channel creation, advanced moderation, and a custom markup language for dynamic embeds. Handled full-stack development from backend logic to user-facing features.</p>
+                    </div>
+
+                    <div class="job-item">
+                        <h3>Schedule Grabber</h3>
+                        <p class="company">Personal Project</p>
+                        <p class="period">August 2024 - September 2024</p>
+                        <p class="description">Developed a web scraping script to extract work calendar data, generate .ics files, and host them on a private network for automatic syncing across multiple personal Apple Calendars.</p>
+                    </div>
+                </div>
+                
+                <div id="education" class="content-section">
+                    <!-- Education items -->
+
+                    <div class="edu-item">
+                        <h3>Software Engineering - B.S.</h3>
+                        <p class="institution">Arizona State University</p>
+                        <p class="period">August 2025 - TBD</p>
+                    <p class="description">Bachelor of Science in Software Engineering, building on fundamentals, data structures, logic, and software engineering principles, while expanding proficiency in programming languages.</p>
+                    </div>
+
+                    <div class="edu-item">
+                        <h3>Software Engineering - A.A.S.</h3>
+                        <p class="institution">Hopkinsville Community College</p>
+                        <p class="period">August 2021 - August 2024</p>
+                        <p class="description">Associate of Applied Science in Software Engineering, with a focus on programming fundamentals, Python, Java, and web development.</p>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <div class="technologies">
+            <h2 class="tech-title">Technical Skills</h2>
+            <div class="tech-icons">
+                <!-- Programming Languages -->
+                <div class="tech-category">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="category-icons">
+                        <!-- Python -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
+                                 class="tech-icon" alt="Python" aria-label="Python">
+                        </div>
+                        
+                        <!-- JavaScript -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" 
+                                 class="tech-icon" alt="JavaScript" aria-label="JavaScript">
+                        </div>
+                        
+                        <!-- HTML5 -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" 
+                                 class="tech-icon" alt="HTML5" aria-label="HTML5">
+                        </div>
+                        
+                        <!-- CSS3 -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
+                                 class="tech-icon" alt="CSS3" aria-label="CSS3">
+                        </div>
+                        
+                        <!-- Java -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" 
+                                 class="tech-icon" alt="Java" aria-label="Java">
+                        </div>
+
+                        <!-- SQL -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" 
+                                 class="tech-icon" alt="SQL" aria-label="SQL">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Technologies & Databases -->
+                <div class="tech-category">
+                    <h3 class="category-title">Technologies & Databases</h3>
+                    <div class="category-icons">
+                        <!-- MySQL -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" 
+                                 class="tech-icon" alt="MySQL" aria-label="MySQL">
+                        </div>
+                        
+                        <!-- Microsoft Access -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" 
+                                 class="tech-icon" alt="Microsoft Access" aria-label="Microsoft Access">
                         </div>
                     </div>
-                    <img class="project-logo" src="static/images/COG.png" alt="Project Logo">
                 </div>
-                <p>A Discord bot designed to enhance customization and user interaction in select servers where it is installed. Built using the Discord.py library and backed by a MySQL database.</p>
-                
-                <div class="language-stats">
-                    <div class="language-bar">
-                        <div class="language-fill" style="width: 100%; background-color: #3572A5;"></div>
-                    </div>
-                    <div class="language-labels">
-                        <span class="language-label">
-                            <span class="language-dot" style="background-color: #3572A5;"></span>
-                            Python 100%
-                        </span>
-                    </div>
-                </div>
-                <a href="https://github.com/nickrhenderson/COG-Bot" class="github-btn">
-                    <object class="github-icon" data="static/images/svg/github.svg" type="image/svg+xml"></object>
-                    <span>Github</span>
-                </a>
-            </div> <!-- Project Card End -->
-            <!-- * Add more project cards as needed -->
-        </div>
 
-        <!-- CONTACT FORUM -->
-        <div class="contact" id="contact">
-            <div class="contact-container">
-                <h2>CONTACT ME</h2>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                <!-- Software & Tools -->
+                <div class="tech-category">
+                    <h3 class="category-title">Software & Tools</h3>
+                    <div class="category-icons">
+                        <!-- Visual Studio Code -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" 
+                                 class="tech-icon" alt="Visual Studio Code" aria-label="Visual Studio Code">
+                        </div>
+                        
+                        <!-- Visual Studio -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg" 
+                                 class="tech-icon" alt="Visual Studio" aria-label="Visual Studio">
+                        </div>
+                        
+                        <!-- Git -->
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" 
+                                 class="tech-icon" alt="Git" aria-label="Git">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <span class="btn-text">Send Message</span>
-                        <div class="loading-spinner"></div>
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
 
-    </div> <!-- Grid Div -->
+    </div>
 
-    <script src="static/script.js"></script>
+    <script src="static/main.js"></script>
 </body>
 </html>
