@@ -42,10 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const scripts = [
         "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js",
         "https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js",
-        "static/tooltips.js",
-        "static/toggle.js",
-        "static/three.js",
-        "static/app.js"
+        "static/scripts/tooltips.js",
+        "static/scripts/toggle.js",
+        "static/scripts/three.js",
+        "static/scripts/app.js",
+        "static/scripts/pick.js"
     ];
     
     // Load scripts in sequence

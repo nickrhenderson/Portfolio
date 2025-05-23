@@ -91,9 +91,7 @@ function setupEduJobsToggle() {
         
         // Remove initializing class to enable pointer cursor
         toggleContainer.classList.remove('initializing');
-        
-        console.log('Toggle functionality initialized after animations');
-    }, 4000); // Wait until all animations are complete
+    }, 500); // Reduced wait time for better responsiveness
 }
 
 // Export function for use in other modules

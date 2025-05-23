@@ -30,6 +30,9 @@ function initializePortfolio() {
         window.initializeThreeJsBackground();
     }
     
+    // Setup the nose interaction easter egg
+    setupNoseInteraction();
+
     // Remove initial-load class after animations complete
     setTimeout(() => {
         document.body.classList.remove('initial-load');

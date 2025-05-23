@@ -80,6 +80,7 @@ h1 {
 }
 
 .profile-image {
+    position: relative; /* Ensure this is set for absolute positioning to work */
     margin-right: 1.5rem;
     opacity: 0;
     animation: fadeInLeft 0.8s ease-out 0.5s forwards;
@@ -93,6 +94,23 @@ h1 {
     border: 2px solid var(--text-color);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
 }
+
+.nose-hitbox {
+    position: absolute;
+    width: 15px; 
+    height: 15px;
+    left: 50%; 
+    top: 45%; /* Adjusted to better target the nose position */
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    cursor: pointer !important; /* Force pointer cursor */
+    z-index: 10;
+}
+
+/* Optional: Uncomment to visualize the hitbox during development */
+/* .nose-hitbox:hover {
+    background: rgba(255, 0, 0, 0.3);
+} */
 
 .stacked-name {
     text-align: left;
@@ -243,6 +261,12 @@ h1 {
     position: relative;
     min-height: 350px; /* Set a fixed minimum height */
     height: auto;
+    transition: height 0.3s ease; /* Add smooth height transition */
+}
+
+/* Add this class once initialized to enable transitions */
+.content-container.initialized {
+    transition: height 0.3s ease;
 }
 
 .content-section {

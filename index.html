@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick Henderson - Portfolio</title>
     <link rel="stylesheet" href="static/styles.css">
+    <!-- Updated favicon with proper cache-busting -->
+    <link rel="icon" type="image/png" href="static/img/favicon.png?v=1">
 </head>
 <body>
     <div id="canvas-container"></div>
@@ -28,7 +30,7 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
                      class="social-icon" alt="GitHub">
             </a>
-            <a href="path/to/your/resume.pdf" target="_blank" aria-label="Resume">
+            <a href="https://docs.google.com/document/d/12DtmoPEQp4-eJEf9XSIbJVu7XWEt42T0rvTQvYLBenQ/export?format=pdf" target="_blank" aria-label="Resume">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                     <polyline points="14 2 14 8 20 8"></polyline>
@@ -51,7 +53,7 @@
                     <div class="job-item">
                         <h3>COG Discord Bot</h3>
                         <p class="company">Personal Project</p>
-                        <p class="period">Janurary 2023 - Present</p>
+                        <p class="period">Feburary 2023 - Present</p>
                         <p class="description">Built a full-featured Discord bot with customizable tools and a progression system to boost community engagement. Integrated MySQL for persistent user stats and settings. Key features include auto channel creation, advanced moderation, and a custom markup language for dynamic embeds. Handled full-stack development from backend logic to user-facing features.</p>
                     </div>
 
@@ -93,38 +95,50 @@
                     <div class="category-icons">
                         <!-- Python -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
-                                 class="tech-icon" alt="Python" aria-label="Python">
+                            <a href="https://www.python.org/" target="_blank" aria-label="Python official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
+                                     class="tech-icon" alt="Python" aria-label="Python">
+                            </a>
                         </div>
                         
                         <!-- JavaScript -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" 
-                                 class="tech-icon" alt="JavaScript" aria-label="JavaScript">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" aria-label="JavaScript documentation">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" 
+                                     class="tech-icon" alt="JavaScript" aria-label="JavaScript">
+                            </a>
                         </div>
                         
                         <!-- HTML5 -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" 
-                                 class="tech-icon" alt="HTML5" aria-label="HTML5">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" aria-label="HTML5 documentation">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" 
+                                     class="tech-icon" alt="HTML5" aria-label="HTML5">
+                            </a>
                         </div>
                         
                         <!-- CSS3 -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
-                                 class="tech-icon" alt="CSS3" aria-label="CSS3">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" aria-label="CSS3 documentation">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
+                                     class="tech-icon" alt="CSS3" aria-label="CSS3">
+                            </a>
                         </div>
                         
                         <!-- Java -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" 
-                                 class="tech-icon" alt="Java" aria-label="Java">
+                            <a href="https://www.java.com/" target="_blank" aria-label="Java official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" 
+                                     class="tech-icon" alt="Java" aria-label="Java">
+                            </a>
                         </div>
 
                         <!-- SQL -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" 
-                                 class="tech-icon" alt="SQL" aria-label="SQL">
+                            <a href="https://www.postgresql.org/" target="_blank" aria-label="PostgreSQL official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" 
+                                     class="tech-icon" alt="SQL" aria-label="SQL">
+                            </a>
                         </div>
 
                     </div>
@@ -136,14 +150,18 @@
                     <div class="category-icons">
                         <!-- MySQL -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" 
-                                 class="tech-icon" alt="MySQL" aria-label="MySQL">
+                            <a href="https://www.mysql.com/" target="_blank" aria-label="MySQL official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" 
+                                     class="tech-icon" alt="MySQL" aria-label="MySQL">
+                            </a>
                         </div>
                         
-                        <!-- Microsoft Access -->
+                        <!-- Microsoft SQL Server -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" 
-                                 class="tech-icon" alt="Microsoft Access" aria-label="Microsoft Access">
+                            <a href="https://www.microsoft.com/en-us/sql-server/" target="_blank" aria-label="Microsoft SQL Server official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" 
+                                     class="tech-icon" alt="Microsoft SQL Server" aria-label="Microsoft SQL Server">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -154,20 +172,26 @@
                     <div class="category-icons">
                         <!-- Visual Studio Code -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" 
-                                 class="tech-icon" alt="Visual Studio Code" aria-label="Visual Studio Code">
+                            <a href="https://code.visualstudio.com/" target="_blank" aria-label="Visual Studio Code official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" 
+                                     class="tech-icon" alt="Visual Studio Code" aria-label="Visual Studio Code">
+                            </a>
                         </div>
                         
                         <!-- Visual Studio -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg" 
-                                 class="tech-icon" alt="Visual Studio" aria-label="Visual Studio">
+                            <a href="https://visualstudio.microsoft.com/" target="_blank" aria-label="Visual Studio official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg" 
+                                     class="tech-icon" alt="Visual Studio" aria-label="Visual Studio">
+                            </a>
                         </div>
                         
                         <!-- Git -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" 
-                                 class="tech-icon" alt="Git" aria-label="Git">
+                            <a href="https://git-scm.com/" target="_blank" aria-label="Git official website">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" 
+                                     class="tech-icon" alt="Git" aria-label="Git">
+                            </a>
                         </div>
                     </div>
                 </div>
