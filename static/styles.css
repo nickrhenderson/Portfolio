@@ -70,6 +70,16 @@ body {
     max-width: 800px;
 }
 
+/* Responsive hero section for smaller viewports */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto; /* Remove fixed height on mobile */
+        min-height: 55vh; /* Slightly reduced minimum height */
+        padding-top: 2.5rem; /* Reduced padding on top */
+        padding-bottom: 1.5rem; /* Reduced padding on bottom */
+    }
+}
+
 .profile-container {
     display: flex;
     align-items: center;
@@ -95,13 +105,15 @@ body {
     flex-direction: column;
 }
 
+/* Responsive profile container for smaller viewports - Consolidated with other media queries below */
+
 /* ====== TYPOGRAPHY ====== */
 h1 {
     font-weight: 600;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     font-size: clamp(1.5rem, 10vw, 15rem);
-    line-height: 0.7;
+    line-height: 0.8; /* Slightly increased from 0.7 for better readability when stacked */
 }
 
 /* ====== PROFILE SECTION ====== */
@@ -109,16 +121,18 @@ h1 {
     position: relative; /* Ensure this is set for absolute positioning to work */
     margin-right: 1.5rem;
     opacity: 0;
-    animation: fadeInLeft 0.8s ease-out 0.5s forwards;
+    /* Use fadeIn instead of directional animations for consistency across viewports */
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
 }
 
 .profile-image img {
     width: auto;
-    height: clamp(2rem, 13vw, 25rem);
+    height: clamp(2rem, 14vw, 25rem);
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--text-color);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease; /* Smooth transition when size changes */
 }
 
 .nose-hitbox {
@@ -141,7 +155,8 @@ h1 {
 .stacked-name {
     text-align: left;
     opacity: 0;
-    animation: fadeInRight 0.8s ease-out 0.5s forwards;
+    /* Use fadeIn instead of directional animations for consistency across viewports */
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
 }
 
 /* ====== SOCIAL ICONS ====== */
@@ -149,7 +164,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-top: 1rem;
+    margin-top: -1rem;
     opacity: 0;
     animation: fadeIn 0.8s ease-out 0.8s forwards;
 }
@@ -160,6 +175,49 @@ h1 {
     filter: brightness(0) invert(1); /* Convert all icons to white */
     transition: transform var(--transition-speed) ease;
     opacity: 0;
+}
+
+/* Consolidated responsive styling for all profile elements on small viewports */
+@media (max-width: 768px) {
+    /* Profile container adjustments */
+    .profile-container {
+        flex-direction: column;
+        gap: 0.5rem; /* Reduced gap for tighter spacing */
+    }
+    
+    /* Profile image adjustments */
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 0.2rem; /* Reduced space below image container */
+    }
+    
+    .profile-image img {
+        height: clamp(6rem, 28vw, 32rem); /* Increased image size on mobile */
+        margin-bottom: 0.1rem; /* Minimal space below image */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.25); /* Enhanced glow effect */
+    }
+    
+    /* Name adjustments */
+    .stacked-name {
+        width: 100%; /* Ensure full width */
+        margin-top: 0; /* Remove top margin completely */
+        text-align: center;
+        padding: 0; /* Remove side padding for tighter layout */
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: clamp(2.5rem, 11vw, 5rem); /* Much larger font size on mobile */
+        line-height: 0.8; /* Increase line height for better spacing */
+        font-weight: 700; /* Make font bolder on mobile */
+        letter-spacing: 1.5px; /* Increased letter spacing for readability */
+    }    /* Social icons adjustments */
+    .social-icons {
+        gap: 25px; /* Increased gap for better tap targets while staying compact */
+    }
+      .social-icon {
+        height: 33px; /* Slightly larger icons for better visibility */
+    }
 }
 
 /* Use a single class with nth-child for animations */
@@ -531,6 +589,15 @@ h1 {
     .category-icons {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
+    
+    /* Additional responsive adjustments */
+    .tech-title {
+        font-size: 1.3rem;
+    }
+    
+    .category-title {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -545,6 +612,15 @@ h1 {
     
     .tech-name {
         font-size: 0.8rem;
+    }      /* Other styling for extra small screens, profile styling moved to consolidated media query */
+    
+    .edu-jobs, .technologies {
+        margin-top: 3rem; /* Reduce top margin */
+        padding: 1rem; /* Smaller padding */
+    }
+    
+    .job-item, .edu-item {
+        padding: 1rem; /* Smaller padding */
     }
 }
 
