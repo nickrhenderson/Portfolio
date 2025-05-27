@@ -4,58 +4,56 @@
  */
 function setupNoseInteraction() {
     const profileImg = document.querySelector('.profile-image img');
-    
     if (!profileImg) return;
     
-    // Create a div element for the nose hitbox
+    // Create nose hitbox element
     const noseHitbox = document.createElement('div');
     noseHitbox.className = 'nose-hitbox';
     
-    // Wait for image to load to ensure proper positioning
-    if (profileImg.complete) {
-        addNoseHitbox();
-    } else {
-        profileImg.onload = addNoseHitbox;
-    }
+    // Add hitbox once the image is ready
+    (profileImg.complete ? Promise.resolve() : 
+        new Promise(resolve => profileImg.onload = resolve))
+        .then(() => document.querySelector('.profile-image').appendChild(noseHitbox));
     
-    function addNoseHitbox() {
-        // Add the hitbox to the document
-        document.querySelector('.profile-image').appendChild(noseHitbox);
-    }
-    
-    // Optional: Add click behavior
+    // Add click behavior
     noseHitbox.addEventListener('click', () => {
-        // Play a "boop" sound or show a message
+        // Create and add the "Boop!" animation only once if not already defined
+        if (!document.getElementById('boop-animation')) {
+            const style = document.createElement('style');
+            style.id = 'boop-animation';
+            style.textContent = `
+                @keyframes float {
+                    0% { transform: translate(-50%, -100%); opacity: 0; }
+                    20% { opacity: 1; }
+                    100% { transform: translate(-50%, -200%); opacity: 0; }
+                }
+                .boop-text {
+                    position: absolute;
+                    font-size: 18px;
+                    color: white;
+                    background: rgba(0,0,0,0.7);
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    left: 50%;
+                    top: 0;
+                    transform: translate(-50%, -100%);
+                    animation: float 1s forwards;
+                    z-index: 100;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Display the boop text
         const boopText = document.createElement('div');
         boopText.textContent = "Boop!";
-        boopText.style.cssText = `
-            position: absolute;
-            font-size: 18px;
-            color: white;
-            background: rgba(0,0,0,0.7);
-            padding: 5px 10px;
-            border-radius: 5px;
-            left: 50%;
-            top: 0;
-            transform: translate(-50%, -100%);
-            animation: float 1s forwards;
-            z-index: 100;
-        `;
-        
+        boopText.className = "boop-text";
         document.querySelector('.profile-image').appendChild(boopText);
         
-        // Add animation for the boop text
-        const boopStyle = document.createElement('style');
-        boopStyle.textContent = `
-            @keyframes float {
-                0% { transform: translate(-50%, -100%); opacity: 0; }
-                20% { opacity: 1; }
-                100% { transform: translate(-50%, -200%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(boopStyle);
-        
-        // Remove the element after animation completes
+        // Remove after animation completes
         setTimeout(() => boopText.remove(), 1000);
     });
 }
+
+// Export the function for use in other modules
+window.setupNoseInteraction = setupNoseInteraction;

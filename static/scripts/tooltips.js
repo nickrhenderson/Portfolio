@@ -1,96 +1,76 @@
 /**
- * Tooltip functionality for portfolio elements
- * Handles tooltips for social icons, tech icons, and other interactive elements
+ * Unified tooltip functionality for all interactive elements
  */
+
+// Global tooltip element
+let globalTooltip;
+
+/**
+ * Sets up tooltips for both social icons and tech icons
+ */
+function setupTooltips(selector, getTextCallback) {
+    // Create or use existing tooltip
+    if (!globalTooltip) {
+        globalTooltip = document.createElement('div');
+        globalTooltip.className = 'tooltip';
+        document.body.appendChild(globalTooltip);
+    }
+    
+    // Get all elements matching the selector
+    const elements = document.querySelectorAll(selector);
+    
+    // Add event listeners to each element
+    elements.forEach(element => {
+        const tooltipText = getTextCallback(element);
+        
+        element.addEventListener('mouseenter', (e) => {
+            globalTooltip.textContent = tooltipText;
+            globalTooltip.style.opacity = '1';
+            updateTooltipPosition(e);
+        });
+        
+        element.addEventListener('mousemove', updateTooltipPosition);
+        
+        element.addEventListener('mouseleave', () => {
+            globalTooltip.style.opacity = '0';
+        });
+    });
+}
 
 /**
  * Updates tooltip position based on mouse coordinates
  * @param {MouseEvent} e - Mouse event
- * @param {HTMLElement} tooltip - Tooltip element
  */
-function updateTooltipPosition(e, tooltip) {
-    tooltip.style.left = `${e.clientX}px`;
-    tooltip.style.top = `${e.clientY}px`;
+function updateTooltipPosition(e) {
+    globalTooltip.style.left = `${e.clientX}px`;
+    globalTooltip.style.top = `${e.clientY}px`;
 }
 
 /**
- * Sets up tooltips that follow the cursor for social media icons
+ * Sets up tooltips for social media icons
  */
 function setupSocialIconTooltips() {
-    // Create tooltip element
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tooltip';
-    document.body.appendChild(tooltip);
-    
-    // Get all social icon links
-    const socialLinks = document.querySelectorAll('.social-icons a');
-    
-    // Add event listeners to each social link
-    socialLinks.forEach(link => {
-        // Determine tooltip text based on aria-label or alt text of image
-        const tooltipText = link.getAttribute('aria-label') || 
-                           link.querySelector('img')?.getAttribute('alt') || 
-                           'View';
-        
-        // Show tooltip on mouseenter
-        link.addEventListener('mouseenter', (e) => {
-            tooltip.textContent = tooltipText;
-            tooltip.style.opacity = '1';
-            updateTooltipPosition(e, tooltip);
-        });
-        
-        // Update tooltip position on mousemove
-        link.addEventListener('mousemove', (e) => {
-            updateTooltipPosition(e, tooltip);
-        });
-        
-        // Hide tooltip on mouseleave
-        link.addEventListener('mouseleave', () => {
-            tooltip.style.opacity = '0';
-        });
-    });
+    setupTooltips('.social-icons a', (link) => 
+        link.getAttribute('aria-label') || 
+        link.querySelector('img')?.getAttribute('alt') || 
+        'View'
+    );
 }
 
 /**
  * Sets up tooltips for technology icons
  */
 function setupTechIconTooltips() {
-    // Get all tech icon elements
-    const techIcons = document.querySelectorAll('.tech-icon');
-    
-    // Use existing tooltip element or create one if needed
-    let tooltip = document.querySelector('.tooltip');
-    if (!tooltip) {
-        tooltip = document.createElement('div');
-        tooltip.className = 'tooltip';
-        document.body.appendChild(tooltip);
-    }
-    
-    // Add event listeners to each tech icon
-    techIcons.forEach(icon => {
-        // Get tooltip text from aria-label or alt attribute
-        const tooltipText = icon.getAttribute('aria-label') || 
-                          icon.getAttribute('alt') || 
-                          'Technology';
-        
-        // Show tooltip on mouseenter
-        icon.addEventListener('mouseenter', (e) => {
-            tooltip.textContent = tooltipText;
-            tooltip.style.opacity = '1';
-            updateTooltipPosition(e, tooltip);
-        });
-        
-        // Update tooltip position on mousemove
-        icon.addEventListener('mousemove', (e) => {
-            updateTooltipPosition(e, tooltip);
-        });
-        
-        // Hide tooltip on mouseleave
-        icon.addEventListener('mouseleave', () => {
-            tooltip.style.opacity = '0';
-        });
-    });
+    setupTooltips('.tech-icon', (icon) => 
+        icon.getAttribute('aria-label') || 
+        icon.getAttribute('alt') || 
+        'Technology'
+    );
 }
+
+// Export functions for use in other modules
+window.setupSocialIconTooltips = setupSocialIconTooltips;
+window.setupTechIconTooltips = setupTechIconTooltips;
 
 // Export functions for use in other modules
 window.setupSocialIconTooltips = setupSocialIconTooltips;

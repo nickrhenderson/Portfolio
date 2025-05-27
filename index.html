@@ -5,42 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick Henderson - Portfolio</title>
     <link rel="stylesheet" href="static/styles.css">
-    <!-- Updated favicon with proper cache-busting -->
     <link rel="icon" type="image/png" href="static/img/favicon.png?v=1">
 </head>
 <body>
     <div id="canvas-container"></div>
     
-    <div class="center">
-        <div class="profile-container">
-            <div class="profile-image">
-                <!-- Replace with your actual image path -->
-                <img src="static\img\Me.jpg" alt="Nick Henderson">
+    <!-- Hero section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="static/img/Me.jpg" alt="Nick Henderson">
+                </div>
+                <div class="stacked-name">
+                    <h1>NICHOLAS<br>HENDERSON</h1>
+                </div>
             </div>
-            <div class="stacked-name">
-                <h1>NICHOLAS<br>HENDERSON</h1>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/nickrhenderson" target="_blank" aria-label="LinkedIn Profile">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" 
+                         class="social-icon" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/nickrhenderson" target="_blank" aria-label="GitHub Profile">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
+                         class="social-icon" alt="GitHub">
+                </a>
+                <a href="https://docs.google.com/document/d/12DtmoPEQp4-eJEf9XSIbJVu7XWEt42T0rvTQvYLBenQ/export?format=pdf" target="_blank" aria-label="Resume">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </a>
             </div>
         </div>
-        <div class="social-icons">
-            <a href="https://linkedin.com/in/nickrhenderson" target="_blank" aria-label="LinkedIn Profile">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" 
-                     class="social-icon" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/nickrhenderson" target="_blank" aria-label="GitHub Profile">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
-                     class="social-icon" alt="GitHub">
-            </a>
-            <a href="https://docs.google.com/document/d/12DtmoPEQp4-eJEf9XSIbJVu7XWEt42T0rvTQvYLBenQ/export?format=pdf" target="_blank" aria-label="Resume">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                    <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-            </a>
-        </div>
-
+    </section>
+    
+    <div class="content">
         <div class="edu-jobs">
             <div class="toggle-container">
                 <button class="toggle-btn active" data-target="jobs">Experience</button>
@@ -98,6 +101,7 @@
                             <a href="https://www.python.org/" target="_blank" aria-label="Python official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
                                      class="tech-icon" alt="Python" aria-label="Python">
+                                <span class="tech-name">Python</span>
                             </a>
                         </div>
                         
@@ -106,6 +110,7 @@
                             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" aria-label="JavaScript documentation">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" 
                                      class="tech-icon" alt="JavaScript" aria-label="JavaScript">
+                                <span class="tech-name">JavaScript</span>
                             </a>
                         </div>
                         
@@ -114,6 +119,7 @@
                             <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" aria-label="HTML5 documentation">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" 
                                      class="tech-icon" alt="HTML5" aria-label="HTML5">
+                                <span class="tech-name">HTML5</span>
                             </a>
                         </div>
                         
@@ -122,6 +128,7 @@
                             <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" aria-label="CSS3 documentation">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
                                      class="tech-icon" alt="CSS3" aria-label="CSS3">
+                                <span class="tech-name">CSS3</span>
                             </a>
                         </div>
                         
@@ -130,6 +137,7 @@
                             <a href="https://www.java.com/" target="_blank" aria-label="Java official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" 
                                      class="tech-icon" alt="Java" aria-label="Java">
+                                <span class="tech-name">Java</span>
                             </a>
                         </div>
 
@@ -138,6 +146,7 @@
                             <a href="https://www.postgresql.org/" target="_blank" aria-label="PostgreSQL official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" 
                                      class="tech-icon" alt="SQL" aria-label="SQL">
+                                <span class="tech-name">SQL</span>
                             </a>
                         </div>
 
@@ -153,6 +162,7 @@
                             <a href="https://www.mysql.com/" target="_blank" aria-label="MySQL official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" 
                                      class="tech-icon" alt="MySQL" aria-label="MySQL">
+                                <span class="tech-name">MySQL</span>
                             </a>
                         </div>
                         
@@ -161,6 +171,7 @@
                             <a href="https://www.microsoft.com/en-us/sql-server/" target="_blank" aria-label="Microsoft SQL Server official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" 
                                      class="tech-icon" alt="Microsoft SQL Server" aria-label="Microsoft SQL Server">
+                                <span class="tech-name">SQL Server</span>
                             </a>
                         </div>
                     </div>
@@ -175,6 +186,7 @@
                             <a href="https://code.visualstudio.com/" target="_blank" aria-label="Visual Studio Code official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" 
                                      class="tech-icon" alt="Visual Studio Code" aria-label="Visual Studio Code">
+                                <span class="tech-name">VS Code</span>
                             </a>
                         </div>
                         
@@ -183,6 +195,7 @@
                             <a href="https://visualstudio.microsoft.com/" target="_blank" aria-label="Visual Studio official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-plain.svg" 
                                      class="tech-icon" alt="Visual Studio" aria-label="Visual Studio">
+                                <span class="tech-name">Visual Studio</span>
                             </a>
                         </div>
                         
@@ -191,6 +204,7 @@
                             <a href="https://git-scm.com/" target="_blank" aria-label="Git official website">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" 
                                      class="tech-icon" alt="Git" aria-label="Git">
+                                <span class="tech-name">Git</span>
                             </a>
                         </div>
                     </div>
