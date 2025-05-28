@@ -35,7 +35,7 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     height: auto;
-    min-height: 200vh;
+    overflow-x: hidden;
 }
 
 /* ====== LAYOUT & POSITIONING ====== */
@@ -58,7 +58,7 @@ body {
     justify-content: center;
     position: relative;
     z-index: 10;
-    margin-bottom: 2rem; /* Add space after hero section */
+    margin-bottom: 1rem; /* Reduced space after hero section */
 }
 
 .hero-content {
@@ -74,9 +74,9 @@ body {
 @media (max-width: 768px) {
     .hero-section {
         height: auto; /* Remove fixed height on mobile */
-        min-height: 55vh; /* Slightly reduced minimum height */
-        padding-top: 2.5rem; /* Reduced padding on top */
-        padding-bottom: 1.5rem; /* Reduced padding on bottom */
+        min-height: 50vh; /* Further reduced minimum height */
+        padding-top: 1.5rem; /* Further reduced padding on top */
+        padding-bottom: 1rem; /* Further reduced padding on bottom */
     }
 }
 
@@ -84,7 +84,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Reduced bottom margin */
     opacity: 0;
     animation: fadeIn 0.8s ease-out 0.3s forwards;
     width: 100%;
@@ -164,7 +164,8 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-top: -1rem;
+    margin-top: -0.5rem; /* Adjusted for tighter spacing with name */
+    margin-bottom: 0; /* Ensure no bottom margin */
     opacity: 0;
     animation: fadeIn 0.8s ease-out 0.8s forwards;
 }
@@ -269,13 +270,13 @@ h1 {
 
 /* ====== EDUCATION & JOBS WIDGET ====== */
 .edu-jobs {
-    margin-top: 5rem; /* Increased space between name and edu-jobs section */
+    margin-top: 1.5rem; /* Further reduced space between sections */
     color: var(--text-color);
     position: relative;
     padding: 1.5rem;
     overflow: hidden;
     opacity: 0; /* Remove duplicate opacity */
-    animation: fadeIn 1s ease-out 1.2s forwards;
+    animation: fadeIn 1s ease-out 0.9s forwards; /* Reduced animation delay */
 }
 
 /* Create circular fade-out effect */
@@ -446,23 +447,43 @@ h1 {
 
 /* ====== TECHNOLOGIES SECTION ====== */
 .technologies {
-    margin-top: 5rem;
-    width: 100%;
+    margin-top: 2rem; /* Add some separation from previous section */
+    width: 100vw; /* Full viewport width */
     position: relative;
-    padding: 1.5rem;
-    opacity: 0;
-    animation: fadeIn 1s ease-out 1.8s forwards;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 2rem 0; /* Increased vertical padding */
+    background-color: rgba(10, 10, 10, 0.9); /* Slightly darker for contrast */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(80, 80, 80, 0.3);
+    border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+    z-index: 1; /* Lower z-index than in-depth section */
+    /* No animation for background */
 }
 
 .tech-title {
     font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5rem auto;
+    width: 90%;
+    max-width: 800px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     opacity: 0;
-    animation: fadeIn 0.8s ease-out 2.0s forwards;
+    animation: fadeIn 0.8s ease-out 1.5s forwards; /* Reduced animation delay */
+}
+
+/* Container to maintain content width within full-width background */
+.tech-icons {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Ensure content appears above pattern overlay */
 }
 
 .tech-category {
@@ -472,15 +493,15 @@ h1 {
 
 /* Staggered animations for categories */
 .tech-category:nth-child(1) {
-    animation: fadeIn 0.6s ease-out 2.1s forwards;
+    animation: fadeIn 0.6s ease-out 1.6s forwards;
 }
 
 .tech-category:nth-child(2) {
-    animation: fadeIn 0.6s ease-out 2.3s forwards;
+    animation: fadeIn 0.6s ease-out 1.8s forwards;
 }
 
 .tech-category:nth-child(3) {
-    animation: fadeIn 0.6s ease-out 2.5s forwards;
+    animation: fadeIn 0.6s ease-out 2.0s forwards;
 }
 
 .category-title {
@@ -503,6 +524,7 @@ h1 {
     display: flex;
     opacity: 0;
     animation: fadeInScale 0.5s ease-out forwards;
+    animation-delay: 1.6s; /* Consistent animation delay after tech title appears */
     min-width: 150px;
     margin-bottom: 10px;
 }
@@ -540,47 +562,47 @@ h1 {
 }
 
 /* Tech item border colors matching icon colors */
-.tech-item a[aria-label="Python official website"] {
+.tech-item a[href="https://www.python.org/"] {
     border-left-color: #4B8BBE; /* Python blue */
 }
 
-.tech-item a[aria-label="JavaScript documentation"] {
+.tech-item a[href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"] {
     border-left-color: #F7DF1E; /* JavaScript yellow */
 }
 
-.tech-item a[aria-label="HTML5 documentation"] {
+.tech-item a[href="https://developer.mozilla.org/en-US/docs/Web/HTML"] {
     border-left-color: #E34F26; /* HTML5 orange */
 }
 
-.tech-item a[aria-label="CSS3 documentation"] {
+.tech-item a[href="https://developer.mozilla.org/en-US/docs/Web/CSS"] {
     border-left-color: #1572B6; /* CSS3 blue */
 }
 
-.tech-item a[aria-label="Java official website"] {
+.tech-item a[href="https://www.java.com/"] {
     border-left-color: #EA2D2E; /* Java red */
 }
 
-.tech-item a[aria-label="PostgreSQL official website"] {
+.tech-item a[href="https://www.postgresql.org/"] {
     border-left-color: #336791; /* PostgreSQL blue */
 }
 
-.tech-item a[aria-label="MySQL official website"] {
+.tech-item a[href="https://www.mysql.com/"] {
     border-left-color: #4479A1; /* MySQL blue */
 }
 
-.tech-item a[aria-label="Microsoft SQL Server official website"] {
+.tech-item a[href="https://www.microsoft.com/en-us/sql-server/"] {
     border-left-color: #CC2927; /* SQL Server red */
 }
 
-.tech-item a[aria-label="Visual Studio Code official website"] {
+.tech-item a[href*="vscode"] {
     border-left-color: #007ACC; /* VS Code blue */
 }
 
-.tech-item a[aria-label="Visual Studio official website"] {
+.tech-item a[href*="visualstudio"] {
     border-left-color: #5C2D91; /* Visual Studio purple */
 }
 
-.tech-item a[aria-label="Git official website"] {
+.tech-item a[href="https://git-scm.com/"] {
     border-left-color: #F05032; /* Git orange */
 }
 
@@ -613,15 +635,62 @@ h1 {
     .tech-name {
         font-size: 0.8rem;
     }      /* Other styling for extra small screens, profile styling moved to consolidated media query */
-    
-    .edu-jobs, .technologies {
-        margin-top: 3rem; /* Reduce top margin */
+      .edu-jobs {
+        margin-top: 1.5rem; /* Further reduced top margin for mobile */
         padding: 1rem; /* Smaller padding */
     }
+      
+    .technologies {
+        margin-top: 1.5rem; 
+        padding: 1.5rem 0; /* Keep horizontal padding at 0 for full width */
+    }
     
-    .job-item, .edu-item {
+    .tech-icons {
+        width: 95%; /* Slightly wider on mobile for better use of space */
+    }
+      .job-item, .edu-item {
         padding: 1rem; /* Smaller padding */
     }
+      /* Adjust in-depth responsive styles */
+    .in-depth::before {
+        top: -30px; /* Smaller curve for mobile */
+        height: 60px;
+        left: -25%; /* Extend even more on mobile for smoother curves */
+        width: 150%; /* Make it wider on mobile */
+    }
+    
+    .in-depth-content {
+        width: 95%;
+        padding: 1.5rem 0;
+    }
+}
+
+/* ====== IN DEPTH ====== */
+.in-depth {
+    width: 100vw; /* Full viewport width */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: white;
+    z-index: 2; /* Higher z-index than technologies section */
+    position: relative;
+    padding-top: 3rem; /* Space for the curved transition */
+}
+
+/* Create rounded transition with half eclipse at top */
+.in-depth::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Control how much the curve extends upward */
+    left: -20%; /* Extend beyond the screen edges */
+    width: 140%; /* Make it wider than the container */
+    height: 100px; /* Height of the curve */
+    background-color: white;
+    border-top-left-radius: 100% 100%;
+    border-top-right-radius: 100% 100%;
+    z-index: -1;
 }
 
 /* ====== VISUAL EFFECTS ====== */
@@ -639,6 +708,21 @@ h1 {
         rgba(0, 0, 0, 1) 100%
     );
     z-index: 1;
+}
+
+/* Subtle pattern overlay for technologies section */
+.technologies::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(20, 20, 20, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(20, 20, 20, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 0; /* Set to 0 to appear above the base but below content */
+    opacity: 1; /* Always fully visible, no animation */
 }
 
 /* ====== ANIMATIONS ====== */
@@ -677,7 +761,7 @@ h1 {
 
 /* Ensure proper spacing for content below hero section */
 .content {
-    padding-top: 2rem;
+    padding-top: 1rem; /* Reduced top padding to match our other spacing updates */
     margin: 0 auto;
     width: 90%;
     max-width: 800px;
@@ -702,4 +786,11 @@ h1 {
 
 .hover-lift:hover {
     transform: translateY(-3px);
+}
+
+.in-depth-content {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }

@@ -8,13 +8,12 @@
 function initializePortfolio() {
     // Enable initial animations
     document.body.classList.add('initial-load');
-    
-    // Initialize all components in parallel
+      // Initialize all components in parallel
     const features = [
-        // Initialize tooltips
+        // Initialize tooltips (only for social icons, tech icons have text labels)
         () => {
             if (window.setupSocialIconTooltips) window.setupSocialIconTooltips();
-            if (window.setupTechIconTooltips) window.setupTechIconTooltips();
+            // Tech tooltips disabled as they have visible text labels
         },
         // Initialize toggle functionality
         () => window.setupEduJobsToggle?.(),
