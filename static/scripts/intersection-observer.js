@@ -22,14 +22,13 @@ function setupIntersectionObserver() {
                     handleTechItemAnimation(element);
                 } else if (element.classList.contains('project-item')) {
                     handleProjectItemAnimation(element);
-                } else if (element.classList.contains('edu-jobs')) {
-                    // Just make the container visible, items will animate individually
+                } else if (element.classList.contains('toggle-container')) {
+                    handleToggleContainerAnimation(element);
+                } else if (element.classList.contains('tech-icons')) {
+                    // Tech icons container - just make visible, items animate individually
                     element.style.opacity = '1';
-                } else if (element.classList.contains('technologies')) {
-                    // Just make the container visible, items will animate individually
-                    element.style.opacity = '1';
-                } else if (element.classList.contains('projects-section')) {
-                    // Just make the container visible, items will animate individually
+                } else if (element.classList.contains('projects-grid')) {
+                    // Projects grid container - just make visible, items animate individually
                     element.style.opacity = '1';
                 }
                 
@@ -39,15 +38,15 @@ function setupIntersectionObserver() {
         });
     }, observerOptions);
 
-    // Observe all sections first (to make containers visible)
-    const sectionsToObserve = document.querySelectorAll('.edu-jobs, .technologies, .projects-section');
-    sectionsToObserve.forEach(section => {
-        section.style.opacity = '0';
-        section.style.animation = 'none';
-        observer.observe(section);
+    // Observe content containers within sections (in-depth completely removed)
+    const contentToObserve = document.querySelectorAll('.toggle-container, .tech-icons, .projects-grid');
+    contentToObserve.forEach(content => {
+        content.style.opacity = '0';
+        content.style.animation = 'none';
+        observer.observe(content);
     });
 
-    // Observe individual items within sections
+    // Observe individual items within sections (footer excluded)
     const itemsToObserve = document.querySelectorAll('.job-item, .edu-item, .tech-item, .project-item');
     itemsToObserve.forEach(item => {
         // Set initial state for individual items
@@ -56,6 +55,11 @@ function setupIntersectionObserver() {
         item.style.animation = 'none';
         observer.observe(item);
     });
+}
+
+function handleToggleContainerAnimation(element) {
+    element.style.opacity = '1';
+    element.style.animation = 'fadeIn 0.6s ease-out forwards';
 }
 
 function handleJobEduItemAnimation(element) {
@@ -73,6 +77,22 @@ function handleTechItemAnimation(element) {
 function handleProjectItemAnimation(element) {
     element.style.opacity = '1';
     element.style.transform = 'translateY(0)';
+    element.style.animation = 'fadeIn 0.8s ease-out forwards';
+}
+
+function handleFooterSocialIconsAnimation(element) {
+    element.style.opacity = '1';
+    element.style.animation = 'fadeIn 0.8s ease-out forwards';
+}
+
+function handleFooterTextAnimation(element) {
+    // Simplified animation for Firefox compatibility
+    element.style.opacity = '1';
+    element.style.transition = 'opacity 0.8s ease-out 0.2s';
+}
+
+function handleFooterAnimation(element) {
+    element.style.opacity = '1';
     element.style.animation = 'fadeIn 0.8s ease-out forwards';
 }
 

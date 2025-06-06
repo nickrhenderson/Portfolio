@@ -50,7 +50,8 @@ function updateTooltipPosition(e) {
  * Sets up tooltips for social media icons
  */
 function setupSocialIconTooltips() {
-    setupTooltips('.social-icons a', (link) => 
+    // Setup tooltips for both header and footer social icons
+    setupTooltips('.social-icons a, .footer-social-icons a', (link) => 
         link.getAttribute('aria-label') || 
         link.querySelector('img')?.getAttribute('alt') || 
         'View'
@@ -67,10 +68,6 @@ function setupTechIconTooltips() {
         'Technology'
     );
 }
-
-// Export functions for use in other modules
-window.setupSocialIconTooltips = setupSocialIconTooltips;
-window.setupTechIconTooltips = setupTechIconTooltips;
 
 // Export functions for use in other modules
 window.setupSocialIconTooltips = setupSocialIconTooltips;
