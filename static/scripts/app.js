@@ -8,7 +8,8 @@
 function initializePortfolio() {
     // Enable initial animations
     document.body.classList.add('initial-load');
-      // Initialize all components in parallel
+    
+    // Initialize all components in parallel
     const features = [
         // Initialize tooltips (only for social icons, tech icons have text labels)
         () => {
@@ -20,12 +21,15 @@ function initializePortfolio() {
         // Initialize 3D background
         () => window.initializeThreeJsBackground?.(),
         // Setup nose interaction easter egg
-        () => window.setupNoseInteraction?.()
+        () => window.setupNoseInteraction?.(),
+        // Setup intersection observer for scroll-based animations
+        () => window.setupIntersectionObserver?.()
     ];
     
     // Execute all initializations
     features.forEach(init => init());
-      // Preload both sections for smoother transitions
+    
+    // Preload both sections for smoother transitions
     setTimeout(() => {
         // Preload education content even if not initially active
         const educationSection = document.getElementById('education');

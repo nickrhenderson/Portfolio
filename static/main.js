@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "static/scripts/tooltips.js",
             "static/scripts/toggle.js", 
             "static/scripts/three.js",
+            "static/scripts/intersection-observer.js", // Add new script
             "static/scripts/app.js", 
             "static/scripts/pick.js"
         ].map(src => {
